@@ -27,7 +27,7 @@ jobs:
         dotnet-version: 7.0.x
     - name: build_release
       run: |
-        cd FiatChampAddon/FiatClient
+        cd FiatAddon/FiatClient
         dotnet publish -r ${{ matrix.rid }} --configuration Release --self-contained -o build/
     - name: docker_login
       uses: docker/login-action@v2.0.0
@@ -36,8 +36,8 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: create_image
-      uses: home-assistant/builder@2022.09.0
+      uses: home-assistant/builder@master
       with:
         args: |
           --${{ matrix.arch }} \
-          --target FiatChampAddon
+          --target FiatAddon

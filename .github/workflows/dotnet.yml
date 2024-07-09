@@ -3,8 +3,7 @@ name: .NET
 on:
   push:
     branches: 
-      - release
-      - fix
+      - master
 
 jobs:
   build:

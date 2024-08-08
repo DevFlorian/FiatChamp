@@ -44,3 +44,4 @@ schema:
 arch:
   - amd64
   - armv7
+  - aarch64

@@ -42,4 +42,5 @@ jobs:
       with:
         args: |
           --${{ matrix.arch }} \
+          --no-cache \
           --target FiatAddon
